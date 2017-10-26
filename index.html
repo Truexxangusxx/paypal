@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>node and reactive</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+</head>
+
+<body>
+    <h1>bienvenido</h1>
+
+    <h2>comprar por 25$</h2>
+    <form action="/pay" method="post">
+        <input type="submit" value="comprar">
+    </form>
+
+
+    <br>
+    <br>
+    <br>
+
+
+    <div id="paypal-button"></div>
+
+    <script>
+        paypal.Button.render({
+
+            env: 'sandbox', // Or 'sandbox','production'
+
+            commit: true, // Show a 'Pay Now' button
+
+            payment: function () {
+                // Set up the payment here
+            },
+
+            onAuthorize: function (data, actions) {
+                // Execute the payment here
+            }
+
+        }, '#paypal-button');
+    </script>
+
+
+</body>
+
+</html>
